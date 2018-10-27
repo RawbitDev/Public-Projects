@@ -1,7 +1,6 @@
 //Vigenère Chiffre Entschlüsselung - by GitHub.com/RawbitDev
 #include <iostream>
 #include <string>
-#include <cstring>
 using namespace std;
 
 int main()
