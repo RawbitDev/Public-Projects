@@ -7,7 +7,7 @@ int main()
     string Text = "";
 
     cout << "Text eingeben> ";
-    //cin << Text;
+    //cin >> Text;
     getline(cin, Text);
 
     if (Text == "") {
