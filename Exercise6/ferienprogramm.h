@@ -16,6 +16,7 @@ public:
     void angebotLoeschen();
     void kindAnmelden();
     void buchungslisteAnzeigen();
+    int InputIdPosDialog();
 private:
     vector<Angebot> angebotsListe;
     int start;

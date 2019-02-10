@@ -75,78 +75,69 @@ void Ferienprogramm::angeboteAnzeigen()
 
 void Ferienprogramm::angebotLoeschen()
 {
-    if(int(angebotsListe.size()) <= 0) {
-        cout << "Aktuell sind noch keine Angebote vorhanden. Legen Sie bitte zuerst ein Angebot an." << endl;
-        angebotEintragen();
-        return;
-    }
+    int pos = InputIdPosDialog();
 
-    int input=0;
-    cout << "Waehlen Sie ein Angebot: ";
-    cin >> input;
-
-    if(input < 1 || input > int(angebotsListe.size())) {
-        cout << "Eigegebene ID wurde nicht gefunden." << endl;
+    if(angebotsListe.at(pos).freiePlaetze() == angebotsListe.at(pos).getPlaetze()) {
+        angebotsListe.erase(angebotsListe.begin()+pos);
+        cout << "Ausgewaehltes Angebot erfolgreich geloescht." << endl;
     } else {
-        if(angebotsListe.at(input-1).freiePlaetze() == angebotsListe.at(input-1).getPlaetze()) {
-            angebotsListe.erase(angebotsListe.begin()+input-1);
-            cout << "Ausgewaehltes Angebot erfolgreich gelöscht." << endl;
-        } else {
-            cout << "Loeschen nicht moeglich! Es sind noch Kinder fuer das ausgewaehltes Angebot angemeldet." << endl;
-        }
+        cout << "Loeschen nicht moeglich! Es sind noch Kinder fuer das ausgewaehltes Angebot angemeldet." << endl;
     }
+
     cout << endl;
 }
 
 void Ferienprogramm::kindAnmelden()
 {
-    if(int(angebotsListe.size()) <= 0) {
-        cout << "Aktuell sind noch keine Angebote vorhanden. Legen Sie bitte zuerst ein Angebot an." << endl;
-        angebotEintragen();
-        return;
-    }
+    int pos = InputIdPosDialog();
 
-    int input=0;
-    cout << "Waehlen Sie ein Angebot: ";
-    cin >> input;
-
-    if(input < 1 || input > int(angebotsListe.size())) {
-        cout << "Eigegebene ID wurde nicht gefunden." << endl;
+    if(angebotsListe.at(pos).istVoll()) {
+        cout << "Das ausgewaehlte Angebot is bereits voll." << endl;
     } else {
-        if(angebotsListe.at(input-1).istVoll()) {
-            cout << "Das ausgewaehlte Angebot is bereits voll." << endl;
-        } else {
-            string Vorname="", Nachname="", Geburtsdatum="";
-            cout << "Vorname: ";
-            cin >> Vorname;
-            cout << "Nachname: ";
-            cin >> Nachname;
-            cout << "Geburtsdatum: ";
-            cin >> Geburtsdatum;
-            cout << endl;
+        string Vorname="", Nachname="", Geburtsdatum="";
+        cout << "Vorname: ";
+        cin >> Vorname;
+        cout << "Nachname: ";
+        cin >> Nachname;
+        cout << "Geburtsdatum: ";
+        cin >> Geburtsdatum;
+        cout << endl;
 
-            angebotsListe.at(input-1).kindAufnehmen(Kind{Vorname, Nachname, Geburtsdatum});
-            cout << endl;
-        }
+        angebotsListe.at(pos).kindAufnehmen(Kind{Vorname, Nachname, Geburtsdatum});
+        cout << endl;
     }
 }
 
 void Ferienprogramm::buchungslisteAnzeigen()
 {
+    int pos = InputIdPosDialog();
+    if (pos >= 0) {
+        angebotsListe.at(pos).buchungslisteAnzeigen();
+    }
+    cout << endl;
+}
+
+int Ferienprogramm::InputIdPosDialog()
+{
     if(int(angebotsListe.size()) <= 0) {
         cout << "Aktuell sind noch keine Angebote vorhanden. Legen Sie bitte zuerst ein Angebot an." << endl;
         angebotEintragen();
-        return;
+        return -1;
     }
 
-    int input=0;
+    int id=0;
     cout << "Waehlen Sie ein Angebot: ";
-    cin >> input;
+    cin >> id;
 
-    if(input < 1 || input > int(angebotsListe.size())) {
-        cout << "Eigegebene ID wurde nicht gefunden." << endl;
+    if(id <= 0) {
+        cout << "Eigegebene ID muss groesser als 0 sein!" << endl;
     } else {
-        angebotsListe.at(input-1).buchungslisteAnzeigen();
+        for(int i=0; i<int(angebotsListe.size()); i++) {
+            if (angebotsListe.at(i).getId() == id) {
+                return i;
+            }
+        }
+        cout << "Eigegebene ID wurde nicht gefunden." << endl;
     }
-    cout << endl;
+    return -1;
 }
