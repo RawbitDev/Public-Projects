@@ -77,13 +77,14 @@ void Ferienprogramm::angebotLoeschen()
 {
     int pos = InputIdPosDialog();
 
-    if(angebotsListe.at(pos).freiePlaetze() == angebotsListe.at(pos).getPlaetze()) {
-        angebotsListe.erase(angebotsListe.begin()+pos);
-        cout << "Ausgewaehltes Angebot erfolgreich geloescht." << endl;
-    } else {
-        cout << "Loeschen nicht moeglich! Es sind noch Kinder fuer das ausgewaehltes Angebot angemeldet." << endl;
+    if (pos >= 0) {
+        if(angebotsListe.at(pos).freiePlaetze() == angebotsListe.at(pos).getPlaetze()) {
+            angebotsListe.erase(angebotsListe.begin()+pos);
+            cout << "Ausgewaehltes Angebot erfolgreich geloescht." << endl;
+        } else {
+            cout << "Loeschen nicht moeglich! Es sind noch Kinder fuer das ausgewaehltes Angebot angemeldet." << endl;
+        }
     }
-
     cout << endl;
 }
 

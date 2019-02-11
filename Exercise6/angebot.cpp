@@ -13,6 +13,11 @@ Angebot::Angebot(string Title, int Plaetze, int Kw)
     kw = Kw;
     voll = false;
     teilnehmer = new Kind[plaetze];
+    for (int i=0; i<plaetze; i++) {
+        teilnehmer[i].vorname = "";
+        teilnehmer[i].nachname = "";
+        teilnehmer[i].geburtsdatum = "";
+    }
 }
 
 Angebot::~Angebot()
@@ -22,7 +27,6 @@ Angebot::~Angebot()
 
 void Angebot::kindAufnehmen(Kind kind)
 {
-
     teilnehmer[plaetze-freiePlaetze()] = kind;
     cout << "Kind erfolgreich angemeldet." << endl;
 
