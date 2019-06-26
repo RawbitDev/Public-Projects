@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/main">
+        <file>res/icon.svg</file>
+    </qresource>
+    <qresource prefix="/menu">
+        <file>res/exit.svg</file>
+        <file>res/open.svg</file>
+        <file>res/show.svg</file>
+        <file>res/clear.svg</file>
+        <file>res/search.svg</file>
+        <file>res/audit.svg</file>
+    </qresource>
+    <qresource prefix="/audit">
+        <file>res/audit_result/fine.png</file>
+        <file>res/audit_result/hotel_missing.png</file>
+        <file>res/audit_result/hotel_needless.png</file>
+        <file>res/audit_result/roundtrip.png</file>
+    </qresource>
+</RCC>
