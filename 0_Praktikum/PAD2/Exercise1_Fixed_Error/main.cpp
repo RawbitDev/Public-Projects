@@ -4,8 +4,8 @@ using namespace std;
 
 int main(){
 
-    TravelAgency* ta;
-    ta->readFile();
+    TravelAgency ta;
+    ta.readFile();
 
     return 0;
 }

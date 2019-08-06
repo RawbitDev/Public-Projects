@@ -17,7 +17,7 @@ private:
     vector <FlightBooking*> flightBookings;
 
 public:
-    TravelAgency();
+    TravelAgency(){}
     void readFile();
 };
 
