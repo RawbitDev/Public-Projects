@@ -1,16 +1,14 @@
-#pragma once
 #ifndef HOTELBOOKING_H
 #define HOTELBOOKING_H
-//#include <iostream>
-#include "booking.h"
-//using namespace std;
+#include <booking.h>
+using namespace std;
 
 class HotelBooking : public Booking
 {
 private:
-
     string hotel;
     string town;
+
 public:
     HotelBooking();
     string getHotel() const;

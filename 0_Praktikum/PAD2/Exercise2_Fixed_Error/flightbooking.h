@@ -1,9 +1,7 @@
-#pragma once
 #ifndef FLIGHTBOOKING_H
 #define FLIGHTBOOKING_H
-//#include <iostream>
-#include "booking.h"
-//using namespace std;
+#include <booking.h>
+using namespace std;
 
 class FlightBooking : public Booking
 {
@@ -11,6 +9,7 @@ private:
     string fromDest;
     string toDest;
     string airline;
+
 public:
     FlightBooking();
     string getFromDest() const;

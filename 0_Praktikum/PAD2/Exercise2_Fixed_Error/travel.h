@@ -1,12 +1,8 @@
-#pragma once
 #ifndef TRAVEL_H
 #define TRAVEL_H
-//#include <iostream>
-//#include <vector>
 #include <booking.h>
-#include "customer.h"
-//#include "travelagency.h"
-//using namespace std;
+#include <vector>
+using namespace std;
 
 class Travel{
 private:
@@ -15,6 +11,7 @@ private:
     long id;
     long customerId;
     vector <Booking*> travelBookings;
+
 public:
     Travel();
     void addBooking(Booking* booking);

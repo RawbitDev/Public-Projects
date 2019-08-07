@@ -1,18 +1,16 @@
-#pragma once
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
-#include <iostream>
-#include <vector>
-#include "travel.h"
-//#include "travelagency.h"
+#include <travel.h>
 using namespace std;
 
-class Customer{
+class Customer
+{
 private:
     //Travel *trvl;
     long id;
     string name;
     vector <Travel*> travelList;
+
 public:
     Customer();
     long getId() const;

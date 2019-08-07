@@ -1,14 +1,15 @@
-#pragma once
 #ifndef TRAVELAGENCY_H
 #define TRAVELAGENCY_H
+
+#include <travel.h>
+#include <customer.h>
+#include <booking.h>
+#include <flightbooking.h>
+#include <hotelbooking.h>
+#include <rentalcarreservation.h>
+
 #include <iostream>
 #include <vector>
-#include "rentalcarreservation.h"
-#include "flightbooking.h"
-#include "hotelbooking.h"
-#include "booking.h"
-#include "travel.h"
-#include "customer.h"
 #include <fstream>
 #include <sstream>
 using namespace std;

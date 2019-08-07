@@ -1,10 +1,7 @@
-#pragma once
 #ifndef RENTALCARRESERVATIONS_H
 #define RENTALCARRESERVATIONS_H
-#include <iostream>
-#include "booking.h"
+#include <booking.h>
 using namespace std;
-
 
 class RentalCarReservation : public Booking
 {

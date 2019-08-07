@@ -1,11 +1,10 @@
-#pragma once
 #ifndef BOOKING_H
 #define BOOKING_H
 #include <iostream>
-#include "travelagency.h"
 using namespace std;
 
-class Booking{
+class Booking
+{
 private:
     //TravelAgency *tA;
     //Travel *tr;
