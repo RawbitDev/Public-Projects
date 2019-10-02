@@ -1,2 +1,2 @@
-# Public-Projects
-Just an overview of my public projects.
+# University-projects
+Here you can find university related projects and stuff.
